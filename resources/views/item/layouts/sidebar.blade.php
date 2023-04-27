@@ -33,9 +33,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">
+                <a class="nav-link" href="{{ route('profil.index') }}">
                     <span data-feather="wind"></span>
-                    About
+                    Profil
                 </a>
             </li>
         </ul>

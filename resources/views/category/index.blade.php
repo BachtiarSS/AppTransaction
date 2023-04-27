@@ -1,4 +1,4 @@
-@extends('category.layouts.MainCategory')
+@extends('layouts.main')
 @section('konten')
     {{-- Konten --}}
     {{-- Konten --}}

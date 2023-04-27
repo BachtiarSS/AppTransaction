@@ -56,37 +56,12 @@
                 <label for="floatingPassword">Password</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingPassword" placeholder="DD/MM/YYY"
-                    name="dateBirth">
-                <label for="dateBirth">Tanggal Lahir</label>
-            </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingPassword" placeholder="Domisili" name="Domisili">
-                <label for="Domisili">Domisili</label>
-            </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingPassword" placeholder="Job" name="Job">
-                <label for="Job">Pekerjaan</label>
-            </div>
-            <div class="form-floating">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
                     name="email">
                 <label for="floatingInput">Email address</label>
             </div>
-
-            <div class="mb-3">
-                <label for="image" class="form-label @error('image') is-invalid @enderror">Upload Gambar</label>
-                <input class="form-control" type="file" id="image" name="image">
-                @error('image')
-                    <p class="text-danger">
-                        {{ $message }}
-                    </p>
-                @enderror
-            </div>
-
-
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
-            <p class="mt-5 mb-3 text-muted"> Sudah punya Akun?? <a href="/login">Login</a> </p>
+            <p class="mt-5 mb-3 text-muted"> Sudah punya Akun?? <a href="{{ route('login') }}">Login</a> </p>
             <p class="mt-5 mb-3 text-muted"> Aplikasi Keuangan &copy;created byBachtiar </p>
         </form>
     </main>

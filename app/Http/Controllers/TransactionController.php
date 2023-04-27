@@ -26,6 +26,8 @@ class TransactionController extends Controller
         }
 
         return view('transaction.index', [
+            'title' => 'Halaman Transaction',
+            'pageTitle' => 'Transaction',
             'transactions' => $hasil->paginate(4),
             'item' => Item::all(),
             'income' => Transaction::where('status', '1')->where('user_id', Auth::user()->id)->sum('amount'),
@@ -43,6 +45,8 @@ class TransactionController extends Controller
     public function create()
     {
         return view('transaction.create', [
+            'title' => 'Add Transaction',
+            'pageTitle' => 'Add Transaction',
             'transactions' => Transaction::all(),
             'items' => Item::all()
         ]);
@@ -95,6 +99,8 @@ class TransactionController extends Controller
     public function edit(Transaction $transaction)
     {
         return view('transaction.edit', [
+            'title' => 'Update Transaction',
+            'pageTitle' => 'Update Transaction',
             'transaction' => Transaction::findOrFail($transaction->id),
             'items' => Item::all(),
             // dd($item->name),

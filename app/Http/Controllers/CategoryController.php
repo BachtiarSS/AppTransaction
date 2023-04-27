@@ -26,6 +26,8 @@ class CategoryController extends Controller
         $categories = Category::all();
         // dd($categories);
         return view('category.index', [
+            'title' => 'Halaman Category',
+            'pageTitle' => 'Halaman Category',
             'categories' => $hasil->paginate(2),
         ]);
     }
@@ -37,7 +39,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('category.create', [
+            'title' => 'Add Category',
+            'pageTitle' => 'Add Category',
+        ]);
     }
 
     /**
@@ -82,6 +87,8 @@ class CategoryController extends Controller
     {
 
         return view('category.edit', [
+            'title' => 'Update Category',
+            'pageTitle' => 'Update Category',
             'category' => Category::findOrFail($category->id)
         ]);
     }

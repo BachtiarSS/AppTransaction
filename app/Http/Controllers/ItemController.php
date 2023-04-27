@@ -29,6 +29,8 @@ class ItemController extends Controller
 
 
         return view('item.index', [
+            'title' => 'Halaman Item',
+            'pageTitle' => 'Halaman Item',
             'items' => $hasil->paginate(5),
             'categories' => Category::all()
         ]);
@@ -42,6 +44,8 @@ class ItemController extends Controller
     public function create()
     {
         return view('item.create', [
+            'title' => 'Add Item',
+            'pageTitle' => 'Add Item',
             'categories' => Category::all(),
             'items' => Item::all()
         ]);
@@ -90,6 +94,8 @@ class ItemController extends Controller
     {
         // dd($item);
         return view('item.edit', [
+            'title' => 'Update Item',
+            'pageTitle' => 'Update Item',
             'item' => Item::findOrFail($item->id),
             'categories' => Category::all(),
             // dd($item->name),

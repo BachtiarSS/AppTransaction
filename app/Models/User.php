@@ -19,6 +19,11 @@ class User extends Authenticatable
      */
     protected $guarded = ['id'];
 
+    public function profil()
+    {
+        return $this->hasOne(Profil::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

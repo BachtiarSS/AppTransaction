@@ -19,23 +19,13 @@ class RegisterController extends Controller
         $validateData = $request->validate([
             'name' => 'required|max:200',
             'password' => 'required',
-            'dateBirth' => 'required',
-            'Domisili' => 'required',
-            'Job' => 'required',
             'email' => 'required',
-            'image' => 'required|image'
         ]);
 
-
-        $validateData['image'] = $request->file('image')->store('post-images');
 
         $validateData['password'] = Hash::make($validateData['password']);
         // dd($validateData);
         User::create($validateData);
-
-        // username : kirito
-        // password : asuna
-
-        return redirect()->route('login.index');
+        return redirect()->route('login');
     }
 }

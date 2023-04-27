@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TransactionController;
 
@@ -52,4 +53,5 @@ Route::post('register', [RegisterController::class, 'store']);
 
 Route::resource('/category', CategoryController::class)->middleware('auth');
 Route::resource('/item', ItemController::class)->middleware('auth');;
-Route::resource('/transaction', TransactionController::class)->middleware('auth');;
+Route::resource('/transaction', TransactionController::class)->middleware('auth');
+Route::resource('/profil', ProfilController::class)->middleware('auth');

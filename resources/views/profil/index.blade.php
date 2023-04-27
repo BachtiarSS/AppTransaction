@@ -14,25 +14,39 @@
                                     <td>{{ auth()->user()->name }}</td>
                                 </tr>
                                 <tr>
+                                    <th>REGISTERED NINJA</th>
+                                    <th>:</th>
+                                    <td>{{ auth()->user()->registered_ninja }}</td>
+                                </tr>
+                                <tr>
+                                    <th>EMAIL</th>
+                                    <th>:</th>
+                                    <td>{{ auth()->user()->email }}</td>
+                                </tr>
+                                <tr>
                                     <th>VILLAGE</th>
                                     <th>:</th>
-                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam inventore
-                                    </td>
+                                    <td>{{ auth()->user()->village }}</td>
+                                </tr>
+                                <tr>
+                                    <th>HEIGHT</th>
+                                    <th>:</th>
+                                    <td>{{ auth()->user()->height }}</td>
+                                </tr>
+                                <tr>
+                                    <th>WEIGHT</th>
+                                    <th>:</th>
+                                    <td>{{ auth()->user()->weight }}</td>
                                 </tr>
                                 <tr>
                                     <th>NINJA RANK</th>
                                     <th>:</th>
-                                    <td>{{ auth()->user()->Domisili }}</td>
-                                </tr>
-                                <tr>
-                                    <th>REGISTERED NINJA</th>
-                                    <th>:</th>
-                                    <td>{{ auth()->user()->Job }}</td>
+                                    <td>{{ auth()->user()->ninja_rank }}</td>
                                 </tr>
                                 <tr>
                                     <th>DATE OF BIRTH</th>
                                     <th>:</th>
-                                    <td>{{ auth()->user()->email }}</td>
+                                    <td>{{ auth()->user()->date_birth }}</td>
                                 </tr>
                                 <tr>
                                     <th>AGE</th>
@@ -40,39 +54,9 @@
                                     <td>{{ auth()->user()->email }}</td>
                                 </tr>
                                 <tr>
-                                    <th>ZODIAC</th>
-                                    <th>:</th>
-                                    <td>{{ auth()->user()->email }}</td>
-                                </tr>
-                                <tr>
-                                    <th>HEIGHT</th>
-                                    <th>:</th>
-                                    <td>{{ auth()->user()->email }}</td>
-                                </tr>
-                                <tr>
-                                    <th>WEIGHT</th>
-                                    <th>:</th>
-                                    <td>{{ auth()->user()->email }}</td>
-                                </tr>
-                                <tr>
-                                    <th>BLOOD TYPE</th>
-                                    <th>:</th>
-                                    <td>{{ auth()->user()->email }}</td>
-                                </tr>
-                                <tr>
-                                    <th>FAVORITE FOODS</th>
-                                    <th>:</th>
-                                    <td>{{ auth()->user()->email }}</td>
-                                </tr>
-                                <tr>
-                                    <th>HOBBY</th>
-                                    <th>:</th>
-                                    <td>{{ auth()->user()->email }}</td>
-                                </tr>
-                                <tr>
                                     <th>ASSIGNMENT COMPLETE</th>
                                     <th>:</th>
-                                    <td>{{ auth()->user()->email }}</td>
+                                    <td>{{ auth()->user()->mission_succes }}</td>
                                 </tr>
                             </thead>
                         </table>
@@ -80,17 +64,13 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card" style="width: 25rem;">
+                <div class="card text-center bg-dark" style="width: 19rem;">
+                    <img src="{{ asset('storage//public/profil/' . auth()->user()->image) }}"
+                        class="img rounded mx-auto d-block mt-3" alt="" width="250px">
                     <div class="card-body">
 
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <img src="{{ asset('storage/' . auth()->user()->image) }}" class="img-fluid-thumbnail"
-                            alt="" width="200px">
-                        <div class="d-grid gap-2 col-10 mx-auto">
-                            <a href="{{ route('category.index') }}" class="btn btn-dark stretched-link">EDIT</a>
-                            <a href="{{ route('category.index') }}" class="btn btn-info stretched-link">UPDATE</a>
-
-                        </div>
+                        <a href="{{ route('profil.edit', auth()->user()->id) }}" class="btn btn-primary">EDIT PROFIL
+                        </a>
                     </div>
                 </div>
             </div>

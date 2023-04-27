@@ -1,4 +1,4 @@
-@extends('transaction.layouts.main')
+@extends('layouts.main')
 
 @section('konten')
     <div class="container">
